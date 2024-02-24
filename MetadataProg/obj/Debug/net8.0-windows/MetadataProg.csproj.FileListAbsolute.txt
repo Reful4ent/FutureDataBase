@@ -3,11 +3,9 @@ C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\bin
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.runtimeconfig.json
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.dll
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.pdb
-C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg_MarkupCompile.cache
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg_MarkupCompile.lref
-C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.g.resources
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.AssemblyInfoInputs.cache
@@ -18,3 +16,6 @@ C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.pdb
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.genruntimeconfig.cache
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\ref\MetadataProg.dll
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.g.cs
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogInStyle.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.baml

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MetadataProg.View"
         mc:Ignorable="d"
-        Title="LogIn" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="450" Width="800">
+        Title="Вход" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="/MetadataProg;component/View/LogInStyle.xaml"></ResourceDictionary>
     </Window.Resources>
-    <Grid x:Name="Content" Style="{StaticResource ResourceKey=Content}">
+    <Grid Style="{StaticResource ResourceKey=Background_Window}">
         
     </Grid>
 </Window>
