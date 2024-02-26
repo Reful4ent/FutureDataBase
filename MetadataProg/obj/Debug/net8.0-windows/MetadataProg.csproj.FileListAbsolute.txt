@@ -19,3 +19,4 @@ C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.g.cs
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogInStyle.baml
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.sourcelink.json

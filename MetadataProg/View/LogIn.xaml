@@ -5,11 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MetadataProg.View"
         mc:Ignorable="d"
-        Title="Вход" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Вход" Height="350" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="/MetadataProg;component/View/LogInStyle.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid Style="{StaticResource ResourceKey=Background_Window}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90px"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="30px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="Header" Style="{StaticResource ResourceKey=Header_style}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140px"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="Header__text_welcome" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource text--light-yellow}">АИС Отдел кадров</Label>
+            <Label x:Name="Header__text_version" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource text--orange}">Версия 1.0.0.0</Label>
+            <Label x:Name="Header__text_instraction" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource text--white}">Введите имя пользователя и пароль</Label>
+            <Image x:Name="Header__logo" Grid.RowSpan="3" Grid.Column="0" Panel.ZIndex="1" Style="{StaticResource ResourceKey=img--keys}"  Source="/MetadataProg;component/img/Kyes.png" Height="60"></Image>
+        </Grid>
+
+        <Grid Grid.Row="1" x:Name="LogIn_Form" Style="{StaticResource ResourceKey=Main_style}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="Form__text_Login" Grid.Row="0" Grid.Column="0">Имя пользователя</TextBlock>
+            <TextBox x:Name="Form__input_Login" Grid.Row="0" Grid.Column="1"></TextBox>
+            <TextBlock x:Name="Form__text_Password" Grid.Row="1" Grid.Column="0">Пароль</TextBlock>
+            <PasswordBox x:Name="Form__input_Password" Grid.Row="1" Grid.Column="1"></PasswordBox>
+            <Button x:Name="Form__button_SignUp" Grid.Row="2" Grid.Column="0">Вход</Button>
+            <Button x:Name="Form__button_Cancellation" Grid.Row="2" Grid.Column="1">Отмена</Button>
+        </Grid>
         
+        <Grid Grid.Row="2" x:Name="Footer" Style="{StaticResource ResourceKey=Footer_style}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
     </Grid>
 </Window>
