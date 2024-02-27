@@ -9,16 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\Dots.png" />
     <None Remove="img\Kyes.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="img\Dots.png" />
     <Resource Include="img\Kyes.png" />
   </ItemGroup>
 

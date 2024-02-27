@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MetadataProg")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24adbf6dd0dbc6c9dc56e4924c26a8090c5923cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b54c946ad2f1fb8f925b4ddee01e2362e03731f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MetadataProg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MetadataProg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

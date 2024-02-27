@@ -10,12 +10,18 @@
     <Compile Update="View\LogIn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\MenuWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\LogIn.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LogInStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MenuWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
