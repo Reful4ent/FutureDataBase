@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MetadataProg.View"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="450" Width="800">
+        Title="АИС Отдел кадров" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary Source="/MetadataProg;component/View/MenuStyles.xaml"></ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        <TextBlock Text="dfsd"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Navigation" Grid.Row="0" Style="{StaticResource ResourceKey=Navigation--style}">
+            <Border BorderBrush="#000000" BorderThickness="0px 0px 0px 1px"></Border>
+        </Grid>
+        <Grid x:Name="Main" Grid.Row="1" Style="{StaticResource ResourceKey=Main--style}">
+            
+        </Grid>
     </Grid>
 </Window>

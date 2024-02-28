@@ -22,3 +22,4 @@ C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.sourcelink.json
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\MenuWindow.g.cs
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\MenuWindow.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\MenuStyles.baml
