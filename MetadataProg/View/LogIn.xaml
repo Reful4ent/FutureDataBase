@@ -42,10 +42,10 @@
                 <ColumnDefinition Width="13*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label x:Name="Form__text_Login" Grid.Row="0" Grid.Column="0" Style="{StaticResource ResourceKey=text--center}">Имя пользователя</Label>
-            <TextBox x:Name="Form__input_Login" Grid.Row="0" Grid.Column="1" Style="{StaticResource ResourceKey=input_Login--style}"></TextBox>
+            <TextBox x:Name="Form__input_Login" Grid.Row="0" Grid.Column="1" Style="{StaticResource ResourceKey=input_Login--style}" Text="{Binding Login}"></TextBox>
             <Label x:Name="Form__text_Password" Grid.Column="0" Style="{StaticResource ResourceKey=text--center}" Grid.RowSpan="3">Пароль</Label>
-            <PasswordBox x:Name="Form__input_Password" Grid.Column="1" Grid.Row="1" Style="{StaticResource ResourceKey=input_Password--style}"/>
-            <Button x:Name="Form__button_SignUp" Grid.Row="2" Grid.Column="0" Style="{StaticResource ResourceKey=button_SignUp--style}" Click="Form__button_SignUp_Click" >Вход</Button>
+            <PasswordBox x:Name="Form__input_Password" Grid.Column="1" Grid.Row="1" Style="{StaticResource ResourceKey=input_Password--style}" PasswordChanged="Form__input_Password_PasswordChanged"/>
+            <Button x:Name="Form__button_SignUp" Grid.Row="2" Grid.Column="0" Style="{StaticResource ResourceKey=button_SignUp--style}" Command="{Binding GoToMain}" >Вход</Button>
             <Button x:Name="Form__button_Cancellation" Grid.Row="2" Grid.Column="1" Style="{StaticResource ResourceKey=button_Cancellation--style}" Click="Form__button_Cancellation_Click">Отмена</Button>
         </Grid>
 

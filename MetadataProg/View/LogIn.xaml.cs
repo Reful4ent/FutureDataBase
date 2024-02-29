@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MetadataProg.Data;
+using MetadataProg.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,20 @@ namespace MetadataProg.View
     /// </summary>
     public partial class LogIn : Window
     {
+        IFileParser fileParser;
         readonly Dictionary<string, string> Languages = new Dictionary<string, string>()
         {
             {"ru-RU","Русский"},
             {"en-US","Английский"},
         };
-        public LogIn()
+        public LogIn(IFileParser fileParser)
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            DataContext = new LogInVM(this.fileParser = fileParser);
+            if(DataContext is LogInVM logInVM)
+            {
+                logInVM.LoginSucces += OpenMenuWindow;
+            }
         }
 
         private void Form__button_Cancellation_Click(object sender, RoutedEventArgs e) => this.Close();
@@ -59,9 +67,16 @@ namespace MetadataProg.View
             Footer__text_language.Content = "Язык ввода " + Languages[InputLanguageManager.Current.CurrentInputLanguage.ToString()];
         }
 
-        private void Form__button_SignUp_Click(object sender, RoutedEventArgs e)
+
+        private void Form__input_Password_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            MenuWindow menuWindow = new MenuWindow();
+            if (DataContext is LogInVM loginVM)
+                loginVM.Password = Form__input_Password.Password;
+        }
+
+        private void OpenMenuWindow()
+        {
+            MenuWindow menuWindow = new MenuWindow(fileParser);
             menuWindow.Show();
             this.Close();
         }

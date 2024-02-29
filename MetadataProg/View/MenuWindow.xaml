@@ -11,14 +11,13 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50px"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid x:Name="Navigation" Grid.Row="0" Style="{StaticResource ResourceKey=Navigation--style}">
-            <Border BorderBrush="#000000" BorderThickness="0px 0px 0px 1px"></Border>
-        </Grid>
+        <Menu x:Name="Navigation" Grid.Row="0" Style="{StaticResource ResourceKey=Navigation--style}">
+        </Menu>
         <Grid x:Name="Main" Grid.Row="1" Style="{StaticResource ResourceKey=Main--style}">
-            
+            <TextBlock x:Name="das"></TextBlock>
         </Grid>
     </Grid>
 </Window>

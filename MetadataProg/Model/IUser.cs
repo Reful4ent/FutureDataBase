@@ -10,6 +10,5 @@ namespace MetadataProg.Model
     {
         string Name { get; }
         string Password { get; }
-        Dictionary<string, string> Properties { get; }
     }
 }

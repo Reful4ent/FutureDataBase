@@ -10,13 +10,13 @@ namespace MetadataProg.Model
     {
         public string Name { get; private set; }
         public string Password { get; private set; }
-        public Dictionary<string, string> Properties { get; private set; }
 
-        public User(string name, string password, Dictionary<string,string> properties)
+        public User(string name, string password)
         {
             Name = name;
             Password = password;
-            Properties = properties;
         }
+
+        public static User Instance(string name, string password) => new(name, password);
     }
 }

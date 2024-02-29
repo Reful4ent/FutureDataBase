@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MetadataProg.Data
 {
-    internal class ParcerManager
+    public interface IFileParser
     {
-
+        public string[][]? MenuItems { get; }
+        public bool ParseMenu(string name, string password);
     }
 }
