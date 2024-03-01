@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MetadataProg.View"
         mc:Ignorable="d"
-        Title="АИС Отдел кадров" Height="450" Width="800" Loaded="Window_Loaded">
+        Icon="/MetadataProg;component/img/MainIcon.png"
+        Title="АИС Отдел кадров" 
+        Height="450"
+        Width="800"
+        Loaded="Window_Loaded">
     <Window.Resources>
-        <ResourceDictionary Source="/MetadataProg;component/View/MenuStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/MetadataProg;component/View/Styles/MenuStyles.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>

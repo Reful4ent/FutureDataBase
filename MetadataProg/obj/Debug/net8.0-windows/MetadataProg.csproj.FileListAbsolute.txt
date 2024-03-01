@@ -17,9 +17,12 @@ C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.genruntimeconfig.cache
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\ref\MetadataProg.dll
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.g.cs
-C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogInStyle.baml
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.baml
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.sourcelink.json
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\MenuWindow.g.cs
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\MenuWindow.baml
-C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\MenuStyles.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\Styles\LogInStyle.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\Styles\MenuStyles.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\ErrorWindow.g.cs
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\ErrorWindow.baml
+C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\Styles\ErrorStyle.baml

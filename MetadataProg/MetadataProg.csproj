@@ -10,12 +10,17 @@
 
   <ItemGroup>
     <None Remove="img\Dots.png" />
+    <None Remove="img\Error.png" />
+    <None Remove="img\ErrorIcon.png" />
     <None Remove="img\Kyes.png" />
+    <None Remove="img\MainIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="img\Dots.png" />
+    <Resource Include="img\ErrorIcon.png" />
     <Resource Include="img\Kyes.png" />
+    <Resource Include="img\MainIcon.png" />
   </ItemGroup>
 
 </Project>

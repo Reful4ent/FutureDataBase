@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MetadataProg.View"
         mc:Ignorable="d"
-        Title="Вход" Height="320" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Icon="/MetadataProg;component/img/MainIcon.png"
+        Title="Вход" 
+        Height="320" 
+        Width="600" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" 
+        Loaded="Window_Loaded">
     <Window.Resources>
-        <ResourceDictionary Source="/MetadataProg;component/View/LogInStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/MetadataProg;component/View/Styles/LogInStyle.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid Style="{StaticResource ResourceKey=Background_Window}">
         <Grid.RowDefinitions>

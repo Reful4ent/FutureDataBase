@@ -35,6 +35,7 @@ namespace MetadataProg.View
             if(DataContext is LogInVM logInVM)
             {
                 logInVM.LoginSucces += OpenMenuWindow;
+                logInVM.LoginDenied += OpenErrorWindow;
             }
         }
 
@@ -79,6 +80,11 @@ namespace MetadataProg.View
             MenuWindow menuWindow = new MenuWindow(fileParser);
             menuWindow.Show();
             this.Close();
+        }
+        private void OpenErrorWindow(string message)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(message);
+            errorWindow.ShowDialog();
         }
     }
 }

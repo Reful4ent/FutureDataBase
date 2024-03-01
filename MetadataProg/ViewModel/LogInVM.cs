@@ -16,6 +16,7 @@ namespace MetadataProg.ViewModel
         string password = string.Empty;
 
         public Action? LoginSucces;
+        public Action<string>? LoginDenied;
         public string Login
         {
             get => login;
@@ -41,6 +42,7 @@ namespace MetadataProg.ViewModel
         {
             if (fileParser.ParseMenu(Login, password))
                 LoginSucces?.Invoke();
+            else LoginDenied?.Invoke("Неправильный логин или пароль или пользователь отсутствует!");
         }
     }
 }

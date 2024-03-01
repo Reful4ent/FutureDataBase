@@ -20,7 +20,7 @@ namespace MetadataProg.View
     /// </summary>
     public partial class MenuWindow : Window
     {
-        IFileParser fileParser;
+        IFileParser? fileParser;
         public MenuWindow(IFileParser fileParser)
         {
             InitializeComponent();
@@ -29,29 +29,30 @@ namespace MetadataProg.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            CreateNavigation(fileParser.MenuItems);
-
+            CreateNavigation(fileParser.MenuItems, 0,-1);
         }
 
-        private void CreateNavigation(string[][] config)
+        private void CreateNavigation(string[][] config, int position, int lastCondiion)
         {
-            MenuItem prevEl = null;
-            //var prevEl = new MenuItem();
-            //int prevIndex = -1;
-            for (int i = 0; i< config.Length; i++)
-            {
-                if (config[i][0] == "0")
-                {
-                    if(prevEl != null)
-                        Navigation.Items.Add(prevEl);
-                    prevEl = DrawMenuItem(config[i][1]);
-                    //prevIndex = i;
-                }
-                else
-                {
-                    prevEl.Items.Add(DrawMenuItem(config[i][1]));
-                }
-            }
+
+            //MenuItem prevEl = null;
+            ////var prevEl = new MenuItem();
+            ////int prevIndex = -1;
+            //for (int i = 0; i< config.Length; i++)
+            //{
+            //    if (config[i][0] == "0")
+            //    {
+            //        if(prevEl != null)
+            //            Navigation.Items.Add(prevEl);
+            //        prevEl = DrawMenuItem(config[i][1]);
+            //        //prevIndex = i;
+            //    }
+            //    else
+            //    {
+            //        prevEl.Items.Add(DrawMenuItem(config[i][1]));
+            //    }
+            //}
+
         }
 
         private MenuItem DrawMenuItem(string text)

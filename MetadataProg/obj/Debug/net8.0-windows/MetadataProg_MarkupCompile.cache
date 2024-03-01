@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\App.xaml
-41158402376
+6-1581852782
 
-12-1169061717
+131720051292
 198-688555687
-View\LogIn.xaml;View\LogInStyle.xaml;View\MenuStyles.xaml;View\MenuWindow.xaml;
+View\ErrorWindow.xaml;View\LogIn.xaml;View\MenuWindow.xaml;View\Styles\ErrorStyle.xaml;View\Styles\LogInStyle.xaml;View\Styles\MenuStyles.xaml;
 
 False
 
