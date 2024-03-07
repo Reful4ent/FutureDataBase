@@ -14,7 +14,7 @@ namespace MetadataProg
         private IFileParser fileParser;
         public App() : base()
         {
-            fileParser = FileParser.Instance("menu2.txt","USERS.txt");
+            fileParser = FileParser.Instance("menu.txt","USERS.txt");
             
         }
         protected override async void OnStartup(StartupEventArgs e)

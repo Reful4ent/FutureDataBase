@@ -26,3 +26,31 @@ C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\ErrorWindow.g.cs
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\ErrorWindow.baml
 C:\Users\dima2\Desktop\Курсач консоль\MetadataProg\MetadataProg\obj\Debug\net8.0-windows\View\Styles\ErrorStyle.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.exe
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.deps.json
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.runtimeconfig.json
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.dll
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\bin\Debug\net8.0-windows\MetadataProg.pdb
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\Styles\ErrorStyle.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\Styles\LogInStyle.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\Styles\MenuStyles.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\ErrorWindow.g.cs
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.g.cs
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\MenuWindow.g.cs
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg_MarkupCompile.cache
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg_MarkupCompile.lref
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\ErrorWindow.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\LogIn.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\View\MenuWindow.baml
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.g.resources
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.AssemblyInfoInputs.cache
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.AssemblyInfo.cs
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.csproj.CoreCompileInputs.cache
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.sourcelink.json
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.dll
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\refint\MetadataProg.dll
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.pdb
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\MetadataProg.genruntimeconfig.cache
+C:\Users\dima2\source\repos\FutureDataBase\MetadataProg\obj\Debug\net8.0-windows\ref\MetadataProg.dll

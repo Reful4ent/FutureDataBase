@@ -5,6 +5,5 @@
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
         <Setter Property="TextAlignment" Value="Center"></Setter>
         <Setter Property="TextWrapping" Value="Wrap"></Setter>
-        <Setter Property="Background" Value="Aqua"></Setter>
     </Style>
 </ResourceDictionary>
