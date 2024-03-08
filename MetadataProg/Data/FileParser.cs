@@ -136,8 +136,14 @@ namespace MetadataProg.Data
                     Array.ConstrainedCopy(fileLine, index, temp, 2, LengthOfSecond);
 
                     fileLine = temp;
+                    
+                    for(int i = 0; i < UserConfig.Length; i++)
+                    {
+                        if (UserConfig[i][0] == fileLine[1])
+                            fileLine[2] = UserConfig[i][1];
+                    }
 
-                    fileLine[2] = UserConfig[position][1];
+                    
                     
                     if (fileLine.Length < 3 && fileLine.Length > 4)
                         return false;

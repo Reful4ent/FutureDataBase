@@ -61,7 +61,7 @@ namespace MetadataProg.View
                     if (config[i].Length == 4)
                         parentItem = DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), config[i][3]);
                     else
-                        parentItem = DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), "Denied");
+                        parentItem = DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), null);
 
 
                     if (i + 1 != config.Length && config[i + 1][0] == "0")
@@ -85,7 +85,7 @@ namespace MetadataProg.View
                             if (config[i].Length == 4)
                                 parentInventory.Add(DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), config[i][3])); 
                             else
-                                parentInventory.Add(DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), "Denied"));
+                                parentInventory.Add(DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), null));
                             levelsOfElement.Add(Convert.ToInt32(config[i][0]));
                         }
 
@@ -151,20 +151,27 @@ namespace MetadataProg.View
         {
             MenuItem menuItem = new();
             menuItem.Header = text;
-            attributes.Add(text,function);
+
             if (condition == 1)
             {
                 menuItem.Foreground = Brushes.LightGray;
+                attributes.Add(text, "Denied");
+                menuItem.Items.Clear();
             }
+            else
+                attributes.Add(text, function);
             menuItem.Click += MenuItem_Click;
             return menuItem;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            
             MenuItem menuItem = sender as MenuItem;
             var myFunc = new FunctionsService();
             int index = methodsName.IndexOf(attributes[menuItem.Header.ToString()]);
+            if (index == -1)
+                return;
             methodInfo[index]?.Invoke(myFunc, null);
         }
 
