@@ -16,7 +16,7 @@ namespace MetadataProg.Model
             Name = name;
             Password = password;
         }
-
         public static User Instance(string name, string password) => new(name, password);
+
     }
 }

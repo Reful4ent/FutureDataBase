@@ -32,7 +32,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label x:Name="Header__text_welcome" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource text--light-yellow}">АИС Отдел кадров</Label>
-            <Label x:Name="Header__text_version" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource text--orange}">Версия 1.0.0.0</Label>
+            <Label x:Name="Header__text_version" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource text--orange}"></Label>
             <Label x:Name="Header__text_instraction" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource text--white}">Введите имя пользователя и пароль</Label>
             <Image x:Name="Header__logo" Grid.RowSpan="3" Grid.Column="0" Panel.ZIndex="1" Style="{StaticResource ResourceKey=img--keys}"  Source="/MetadataProg;component/img/Kyes.png" Height="60"></Image>
         </Grid>

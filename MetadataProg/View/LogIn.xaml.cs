@@ -3,6 +3,7 @@ using MetadataProg.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,6 +29,7 @@ namespace MetadataProg.View
             {"ru-RU","Русский"},
             {"en-US","Английский"},
         };
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public LogIn(IFileParser fileParser)
         {
             InitializeComponent();
@@ -43,10 +45,10 @@ namespace MetadataProg.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromMilliseconds(100);
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Start();
+            Header__text_version.Content = "Версия " +  Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private void DispatcherTimer_Tick(object? sender, EventArgs e)
@@ -79,6 +81,7 @@ namespace MetadataProg.View
         {
             MenuWindow menuWindow = new MenuWindow(fileParser);
             menuWindow.Show();
+            dispatcherTimer.Stop();
             this.Close();
         }
         private void OpenErrorWindow(string message)

@@ -15,9 +15,8 @@ namespace MetadataProg.ViewModel.Commands
         public static Command Create(Action action) => new Command(action);
         public bool CanExecute(object? parameter)
         {
-                return true;
+            return true;
         }
-
         public void Execute(object? parameter)
         {
             action();

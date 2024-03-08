@@ -15,11 +15,9 @@ namespace MetadataProg.Data
         
         string pathMenu = string.Empty;
         string pathUser = string.Empty;
+        string[][]? UserConfig { get; set; }
         FileStream FileStream { get; set; }
         public string[][]? MenuItems { get; private set; }
-
-        string[][]? UserConfig { get; set; }
-
         public IUser user { get; private set; }
 
         public FileParser(string pathMenu, string pathUser)
@@ -39,11 +37,14 @@ namespace MetadataProg.Data
 
         public static FileParser Instance(string pathMenu, string pathUser) => new(pathMenu, pathUser);
 
+        //Считывает пользователя с файла
         private bool ParseUser(string name, string password)
         {
             string fileLine = string.Empty;
             string ConfigLine = string.Empty;
+            //Считывает в себя строчку с файла
             List<string> tokens = new List<string>();
+
             FileStream = new FileStream(this.pathUser, FileMode.Open, FileAccess.Read);
             using StreamReader streamReader = new StreamReader(pathUser);
 
@@ -56,6 +57,7 @@ namespace MetadataProg.Data
                     if (logInData[0] == name && logInData[1] == password && logInData.Length == 2)
                     {
                         user = User.Instance(logInData[0], logInData[1]);
+
                         while ((ConfigLine = streamReader.ReadLine()) != null && !(ConfigLine.StartsWith('#')))
                             tokens.Add(ConfigLine);
 
@@ -66,6 +68,7 @@ namespace MetadataProg.Data
                             UserConfig[i] = tokens[i].Split(' ');
                             ConcatStrings(ref UserConfig[i], 2);
                         }
+
                         FileStream.Close();
                         return true;
                     }
@@ -74,9 +77,10 @@ namespace MetadataProg.Data
             return false;
         }
 
-
+        //Считывает меню с файла
         public bool ParseMenu(string name, string password)
         {
+            //Считывает пользователя, чтобы потом настроить меню под него, если не считал меню не парсится
             if (!ParseUser(name, password))
                 return false;
 
@@ -94,7 +98,7 @@ namespace MetadataProg.Data
             return true;
         }
 
-
+        //Склеивает строчки 1 - для меню, 2 - для пользователя
         private bool ConcatStrings(ref string[] fileLine, int choice, int position = 0) 
         {
             int index = -1;
@@ -105,9 +109,10 @@ namespace MetadataProg.Data
             switch (choice)
             {
                 case 1:
+                    //Проверяет является ли первый элемент числом
                     if (!int.TryParse(fileLine[0], out _))
                         return false;
-
+                    //Ищет следующее число в массиве
                     for (int i = 1; i < fileLine.Length; i++)
                     {
                         if (!int.TryParse(fileLine[i], out _)) continue;
@@ -122,17 +127,18 @@ namespace MetadataProg.Data
 
                     for (int i = 1; i < index; i++)
                         text[i - 1] = fileLine[i];
-
+                    //Склеивает слова по пробелу
                     fileLine[1] = string.Join(" ", text);
                     LengthOfSecond = fileLine.Length - index;
                     temp = new string[2 + LengthOfSecond];
-
+                    //Пересобирает массив
                     Array.ConstrainedCopy(fileLine, 0, temp, 0, 2);
                     Array.ConstrainedCopy(fileLine, index, temp, 2, LengthOfSecond);
 
                     fileLine = temp;
-                    fileLine[2] = UserConfig[position][1];
 
+                    fileLine[2] = UserConfig[position][1];
+                    
                     if (fileLine.Length < 3 && fileLine.Length > 4)
                         return false;
 

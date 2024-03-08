@@ -15,7 +15,7 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="500"></RowDefinition>
+            <RowDefinition Height="18"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Menu x:Name="Navigation" Grid.Row="0" Style="{StaticResource ResourceKey=Navigation--style}">

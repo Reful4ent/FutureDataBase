@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetadataProg.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace MetadataProg.Data
     public interface IFileParser
     {
         public string[][]? MenuItems { get; }
+        public IUser user { get; }
         public bool ParseMenu(string name, string password);
     }
 }
