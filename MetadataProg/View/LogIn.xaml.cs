@@ -1,19 +1,8 @@
 ﻿using MetadataProg.Data;
 using MetadataProg.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace MetadataProg.View
@@ -24,12 +13,14 @@ namespace MetadataProg.View
     public partial class LogIn : Window
     {
         IFileParser fileParser;
+
         readonly Dictionary<string, string> Languages = new Dictionary<string, string>()
         {
             {"ru-RU","Русский"},
             {"en-US","Английский"},
         };
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
+
         public LogIn(IFileParser fileParser)
         {
             InitializeComponent();
@@ -82,7 +73,7 @@ namespace MetadataProg.View
             MenuWindow menuWindow = new MenuWindow(fileParser);
             menuWindow.Show();
             dispatcherTimer.Stop();
-            this.Close();
+            Close();
         }
         private void OpenErrorWindow(string message)
         {

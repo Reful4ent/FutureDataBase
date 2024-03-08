@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MetadataProg.Model
+﻿namespace MetadataProg.Model
 {
     public class User : IUser
     {
@@ -16,7 +10,7 @@ namespace MetadataProg.Model
             Name = name;
             Password = password;
         }
-        public static User Instance(string name, string password) => new(name, password);
 
+        public static User Instance(string name, string password) => new(name, password);
     }
 }

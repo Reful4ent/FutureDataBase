@@ -1,22 +1,23 @@
 ﻿using MetadataProg.Data;
 using MetadataProg.ViewModel.Commands;
-using System;
-using System.Buffers.Text;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetadataProg.ViewModel
 {
     public class LogInVM : BasicVM
     {
         IFileParser fileParser;
+
         string login = string.Empty;
         string password = string.Empty;
 
         public Action? LoginSucces;
         public Action<string>? LoginDenied;
+
+        public LogInVM(IFileParser fileParser)
+        {
+            this.fileParser = fileParser;
+        }
+
         public string Login
         {
             get => login;
@@ -29,14 +30,7 @@ namespace MetadataProg.ViewModel
             set => Set(ref password, value);
         }
 
-        public LogInVM(IFileParser fileParser)
-        {
-            this.fileParser = fileParser;
-        }
-
-
         public Command GoToMain => Command.Create(LogIn);
-
 
         private void LogIn()
         {

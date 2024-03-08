@@ -1,24 +1,17 @@
 ﻿using MetadataProg.Model;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Printing;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetadataProg.Data
 {
     public class FileParser : IFileParser
     {
-        
         string pathMenu = string.Empty;
         string pathUser = string.Empty;
+
         string[][]? UserConfig { get; set; }
         FileStream FileStream { get; set; }
         public string[][]? MenuItems { get; private set; }
-        public IUser user { get; private set; }
+        public IUser ConcreteUser { get; private set; }
 
         public FileParser(string pathMenu, string pathUser)
         {
@@ -56,7 +49,7 @@ namespace MetadataProg.Data
 
                     if (logInData[0] == name && logInData[1] == password && logInData.Length == 2)
                     {
-                        user = User.Instance(logInData[0], logInData[1]);
+                        ConcreteUser = User.Instance(logInData[0], logInData[1]);
 
                         while ((ConfigLine = streamReader.ReadLine()) != null && !(ConfigLine.StartsWith('#')))
                             tokens.Add(ConfigLine);
@@ -143,11 +136,8 @@ namespace MetadataProg.Data
                             fileLine[2] = UserConfig[i][1];
                     }
 
-                    
-                    
                     if (fileLine.Length < 3 && fileLine.Length > 4)
                         return false;
-
                     return true;
                 case 2:
                     for (int i = 0; i < fileLine.Length; i++)
@@ -177,11 +167,10 @@ namespace MetadataProg.Data
 
                     if (fileLine.Length != 2)
                         return false;
-
                     return true;
-                default: return false;
+                default: 
+                    return false;
             }
-
         }
     }
 }

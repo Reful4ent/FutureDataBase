@@ -1,20 +1,9 @@
 ﻿using MetadataProg.Data;
 using MetadataProg.ViewModel.Services;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MetadataProg.View
 {
@@ -45,8 +34,6 @@ namespace MetadataProg.View
         {
             Navigation = CreateNavigation(fileParser.MenuItems, Navigation);
         }
-
-
 
         //Cоздает меню
         private Menu CreateNavigation(string[][] config, Menu menu)
@@ -90,17 +77,14 @@ namespace MetadataProg.View
                         }
 
                         i++;
-
                         if (i == config.Length)
                             break;
                     }
-
                     i--;
                     EditParentItem();
                     menu.Items.Add(parentItem);
                 }
             }
-
             return menu;
         }
 
@@ -108,8 +92,10 @@ namespace MetadataProg.View
         {
             int start = 0,
                 end = 0;
+
             parentInventory.Reverse();
             levelsOfElement.Reverse();
+
             for (int i = 0; i < levelsOfElement.Count; i++)
             {
                 if (i + 1 == levelsOfElement.Count || levelsOfElement[i] == 1)
@@ -137,15 +123,11 @@ namespace MetadataProg.View
                     i = -1;
                 }
             }
-
             for (int i = parentInventory.Count - 1; i >= 0; i--)
                 parentItem.Items.Add(parentInventory[i]);
             parentInventory.Clear();
             levelsOfElement.Clear();
-
         }
-
-
 
         private MenuItem DrawMenuItem(string text, int condition, string function)
         {
@@ -161,12 +143,12 @@ namespace MetadataProg.View
             else
                 attributes.Add(text, function);
             menuItem.Click += MenuItem_Click;
+
             return menuItem;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            
             MenuItem menuItem = sender as MenuItem;
             var myFunc = new FunctionsService();
             int index = methodsName.IndexOf(attributes[menuItem.Header.ToString()]);
@@ -174,6 +156,5 @@ namespace MetadataProg.View
                 return;
             methodInfo[index]?.Invoke(myFunc, null);
         }
-
     }
 }
