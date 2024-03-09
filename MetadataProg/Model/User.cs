@@ -1,5 +1,8 @@
 ﻿namespace MetadataProg.Model
 {
+    /// <summary>
+    /// Класс пользователя (сделан на будущее)
+    /// </summary>
     public class User : IUser
     {
         public string Name { get; private set; }

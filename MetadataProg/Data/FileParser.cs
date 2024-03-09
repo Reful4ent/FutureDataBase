@@ -3,6 +3,9 @@ using System.IO;
 
 namespace MetadataProg.Data
 {
+    /// <summary>
+    /// Класс считывающий и содержащий в себе конфигурацию меню пользователя
+    /// </summary>
     public class FileParser : IFileParser
     {
         string pathMenu = string.Empty;
@@ -70,7 +73,12 @@ namespace MetadataProg.Data
             return false;
         }
 
-        //Считывает меню с файла
+        /// <summary>
+        /// Считывает меню с файла
+        /// </summary>
+        /// <param name="name"> Введенный логин </param>
+        /// <param name="password"> Введенный пароль </param>
+        /// <returns></returns>
         public bool ParseMenu(string name, string password)
         {
             //Считывает пользователя, чтобы потом настроить меню под него, если не считал меню не парсится
@@ -130,6 +138,7 @@ namespace MetadataProg.Data
 
                     fileLine = temp;
                     
+                    // Изменяет стандартную конфигурацию меню под конфигурацию пользователя.
                     for(int i = 0; i < UserConfig.Length; i++)
                     {
                         if (UserConfig[i][0] == fileLine[1])

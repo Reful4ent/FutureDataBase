@@ -2,6 +2,9 @@
 
 namespace MetadataProg.ViewModel.Services
 {
+    /// <summary>
+    /// Класс с методами навигационного меню главного окна
+    /// </summary>
     public class FunctionsService
     {
         public void Others() => MessageBox.Show("Others");

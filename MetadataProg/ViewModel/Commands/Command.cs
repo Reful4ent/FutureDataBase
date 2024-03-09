@@ -2,6 +2,9 @@
 
 namespace MetadataProg.ViewModel.Commands
 {
+    /// <summary>
+    /// Класс для обработки делегатов Action
+    /// </summary>
     public class Command : ICommand
     {
         public event EventHandler? CanExecuteChanged;

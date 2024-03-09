@@ -30,8 +30,14 @@ namespace MetadataProg.ViewModel
             set => Set(ref password, value);
         }
 
+        /// <summary>
+        /// Создание команды для привязки View к обработке нажатия
+        /// </summary>
         public Command GoToMain => Command.Create(LogIn);
 
+        /// <summary>
+        /// Если регистрация прошла успешно, пользователь входит в главное окно, иначе - выскакиевает окно об ошибке
+        /// </summary>
         private void LogIn()
         {
             if (fileParser.ParseMenu(Login, password))

@@ -8,17 +8,23 @@ using System.Windows.Threading;
 namespace MetadataProg.View
 {
     /// <summary>
-    /// Логика взаимодействия для LogIn.xaml
+    /// Окно входа в приложение
     /// </summary>
     public partial class LogIn : Window
     {
         IFileParser fileParser;
-
+        /// <summary>
+        /// Словарик для вывода раскладки пользователя
+        /// </summary>
         readonly Dictionary<string, string> Languages = new Dictionary<string, string>()
         {
             {"ru-RU","Русский"},
             {"en-US","Английский"},
         };
+
+        /// <summary>
+        /// Таймер для проверки статуса CapsLock и раскладки пользователся
+        /// </summary>
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
         public LogIn(IFileParser fileParser)
@@ -34,6 +40,7 @@ namespace MetadataProg.View
 
         private void Form__button_Cancellation_Click(object sender, RoutedEventArgs e) => this.Close();
 
+        // Запускает таймер при загрузке страницы и пишет версию приложения
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dispatcherTimer.Interval = TimeSpan.FromMilliseconds(100);
@@ -42,12 +49,14 @@ namespace MetadataProg.View
             Header__text_version.Content = "Версия " +  Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
+        // Обработка тиков таймера
         private void DispatcherTimer_Tick(object? sender, EventArgs e)
         {
             CapslockCheck();
             LanguageCheck();
         }
 
+        
         private void CapslockCheck()
         {
             if (Console.CapsLock)

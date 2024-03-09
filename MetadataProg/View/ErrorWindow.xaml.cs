@@ -3,7 +3,7 @@
 namespace MetadataProg.View
 {
     /// <summary>
-    /// Логика взаимодействия для ErrorWindow.xaml
+    /// Окно для вывода ошибки
     /// </summary>
     public partial class ErrorWindow : Window
     {
