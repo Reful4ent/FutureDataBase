@@ -3,7 +3,7 @@
 namespace MetadataProg.ViewModel.Commands
 {
     /// <summary>
-    /// Класс для обработки делегатов Action
+    /// Класс для обработки делегатов Action.
     /// </summary>
     public class Command : ICommand
     {

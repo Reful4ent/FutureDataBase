@@ -8,46 +8,45 @@ using System.Windows.Media;
 namespace MetadataProg.View
 {
     /// <summary>
-    /// Главное окно
+    /// Главное окно.
     /// </summary>
     public partial class MenuWindow : Window
     {
         /// <summary>
-        /// Содержит в себе конфигурацию меню пользователя
+        /// Конфигурация меню пользователя.
         /// </summary>
         IFileParser? fileParser;
         
         /// <summary>
-        /// Родительская кнопка (уровень в иерархии 0)
+        /// Родительская кнопка (уровень в иерархии 0).
         /// </summary>
         MenuItem parentItem { get; set; }
 
         /// <summary>
-        /// Список дочерних кнопок
+        /// Список дочерних кнопок.
         /// </summary>
         List<MenuItem> parentInventory = new();
 
         /// <summary>
-        /// Список уровней дочерних кнопок
+        /// Список уровней дочерних кнопок.
         /// </summary>
         List<int> levelsOfElement = new();
 
         /// <summary>
-        /// Список методов для рефлексии
+        /// Список методов для рефлексии.
         /// </summary>
         MethodInfo[] methodInfo = typeof(FunctionsService).GetMethods(BindingFlags.Instance | BindingFlags.Public);
 
         /// <summary>
-        /// Словарь ключ - название кнопки, значение - название метода
+        /// Словарь: ключ - название кнопки, значение - название метода.
         /// </summary>
         Dictionary<string, string> attributes = new Dictionary<string, string>();
 
         /// <summary>
-        /// Названия методов содержащихся в methodInfo
+        /// Названия методов содержащихся в methodInfo.
         /// </summary>
         List<string> methodsName = new List<string>();
-            
-
+                
         public MenuWindow(IFileParser fileParser)
         {
             InitializeComponent();
@@ -56,28 +55,32 @@ namespace MetadataProg.View
                 methodsName.Add(item.Name);
         }
 
-
+        /// <summary>
+        /// Загрузка окна.
+        /// </summary>
+        /// <param name="sender"> Отправитель. </param>
+        /// <param name="e"> Объект, содержащий информацию о связанном событии. </param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Navigation = CreateNavigation(fileParser.MenuItems, Navigation);
         }
 
         /// <summary>
-        /// Создает меню с кнопками под конфигурацию пользователя
+        /// Создание меню с кнопками под конфигурацию пользователя.
         /// </summary>
-        /// <param name="config"></param>
-        /// <param name="menu"></param>
-        /// <returns></returns>
+        /// <param name="config"> Конфигурация. </param>
+        /// <param name="menu"> Меню пользователя. </param>
+        /// <returns> Меню пользователя. </returns>
         private Menu CreateNavigation(string[][] config, Menu menu)
         {
             for (int i = 0; i < config.Length; i++)
             {
-                // Если статус элемента 2 - не создает
+                // Если статус элемента 2 - не создает.
                 if (config[i][2] == "2")
                     continue;
 
                 /* Если статус элемента 0 - создает родительскую (главную кнопку)
-                и записывает в соответствие с иерархией в нее другие кнопки */
+                и записывает в соответствие с иерархией в нее другие кнопки. */
                 if (config[i][0] == "0")
                 {
 
@@ -87,14 +90,14 @@ namespace MetadataProg.View
                         parentItem = DrawMenuItem(config[i][1], Convert.ToInt32(config[i][2]), null);
 
                     /* Если элемент не последний или следующий элемент имеет уровень иерархии 0
-                    записывается элемент в меню*/
+                    записывается элемент в меню.*/
                     if (i + 1 != config.Length && config[i + 1][0] == "0")
                     {
                         menu.Items.Add(parentItem);
                         continue;
                     }
 
-                    // Если элемент является последним - добавляется в меню
+                    // Если элемент является последним - добавляется в меню.
                     if (i + 1 == config.Length)
                     {
                         menu.Items.Add(parentItem);
@@ -103,7 +106,7 @@ namespace MetadataProg.View
 
                     i++;
 
-                    /*Добавление в список дочерних элеементов и их уровень иерархии*/
+                    // Добавление в список дочерних элеементов и их уровень иерархии.
                     while (config[i][0] != "0")
                     {
                         if (config[i][2] != "2")
@@ -127,9 +130,8 @@ namespace MetadataProg.View
             return menu;
         }
 
-
         /// <summary>
-        /// Создаение иерархии кнопок для главной кнопки с номером уровня 0
+        /// Создаение иерархии кнопок для главной кнопки с номером уровня 0.
         /// </summary>
         private void EditParentItem()
         {
@@ -141,6 +143,7 @@ namespace MetadataProg.View
 
             for (int i = 0; i < levelsOfElement.Count; i++)
             {
+                
                 if (i + 1 == levelsOfElement.Count || levelsOfElement[i] == 1)
                 {
                     start = i + 1;
@@ -173,11 +176,11 @@ namespace MetadataProg.View
         }
 
         /// <summary>
-        /// Отрисовывает стили кнопки и привязывает методы к ней
+        /// Отрисовка стилей кнопок и привязка методов к ним.
         /// </summary>
-        /// <param name="text" > Текст на кнопке </param>
-        /// <param name="condition"> Статус кнопки </param>
-        /// <param name="function"> Метод для кнопки </param>
+        /// <param name="text" > Текст на кнопке. </param>
+        /// <param name="condition"> Статус кнопки. </param>
+        /// <param name="function"> Метод для кнопки. </param>
         /// <returns></returns>
         private MenuItem DrawMenuItem(string text, int condition, string function)
         {
@@ -185,7 +188,7 @@ namespace MetadataProg.View
             menuItem.Header = text;
 
             /* Настройки кнопки если статус в файле 1 - кнопка видима
-            но не используется (Открывается окно о недоступности вызова).*/
+            но не используется (Открывается окно о недоступности вызова). */
             if (condition == 1)
             {
                 menuItem.Foreground = Brushes.LightGray;
@@ -199,12 +202,11 @@ namespace MetadataProg.View
             return menuItem;
         }
 
-
         /// <summary>
-        /// Вызывает метод данной кнопки, вызов метода осуществляется через рефлексию
+        /// Вызов метода данной кнопки, вызов метода осуществляется через рефлексию.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> Отправитель. </param>
+        /// <param name="e"> Объект, содержащий информацию о связанном событии. </param>
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             MenuItem menuItem = sender as MenuItem;

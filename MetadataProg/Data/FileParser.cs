@@ -4,24 +4,41 @@ using System.IO;
 namespace MetadataProg.Data
 {
     /// <summary>
-    /// Класс считывающий и содержащий в себе конфигурацию меню пользователя
+    /// Класс считывающий и содержащий в себе конфигурацию меню пользователя.
     /// </summary>
     public class FileParser : IFileParser
     {
         string pathMenu = string.Empty;
         string pathUser = string.Empty;
 
+        /// <summary>
+        /// Конфигурация пользователя.
+        /// </summary>
         string[][]? UserConfig { get; set; }
+
+        /// <summary>
+        /// Поток ввода.
+        /// </summary>
         FileStream FileStream { get; set; }
+
+        /// <summary>
+        /// Элементы меню.
+        /// </summary>
         public string[][]? MenuItems { get; private set; }
+
+        /// <summary>
+        /// Конкретный пользователь.
+        /// </summary>
         public IUser ConcreteUser { get; private set; }
 
         public FileParser(string pathMenu, string pathUser)
         {
-            if(pathMenu == null)
+            // Проверки на нулевой путь к файлам
+            if (pathMenu == null)
                 throw new ArgumentNullException("Нулевая ссылка!");
             if (pathUser == null)
                 throw new ArgumentNullException("Нулевая ссылка!");
+            // Проверки на существование файлов
             if (!File.Exists(pathUser)) 
                 throw new FileNotFoundException();
             if (!File.Exists(pathMenu))
@@ -33,12 +50,17 @@ namespace MetadataProg.Data
 
         public static FileParser Instance(string pathMenu, string pathUser) => new(pathMenu, pathUser);
 
-        //Считывает пользователя с файла
+        /// <summary>
+        /// Считываение пользователя из файла.
+        /// </summary>
+        /// <param name="name"> Введенный логин. </param>
+        /// <param name="password"> Введенный пароль. </param>
+        /// <returns> True - успешное выполнение. False - неуспешное выполнение. </returns>
         private bool ParseUser(string name, string password)
         {
             string fileLine = string.Empty;
             string ConfigLine = string.Empty;
-            //Считывает в себя строчку с файла
+            //Считывает в себя строчку из файла
             List<string> tokens = new List<string>();
 
             FileStream = new FileStream(this.pathUser, FileMode.Open, FileAccess.Read);
@@ -74,14 +96,14 @@ namespace MetadataProg.Data
         }
 
         /// <summary>
-        /// Считывает меню с файла
+        /// Считывание меню из файла.
         /// </summary>
-        /// <param name="name"> Введенный логин </param>
-        /// <param name="password"> Введенный пароль </param>
-        /// <returns></returns>
+        /// <param name="name"> Введенный логин. </param>
+        /// <param name="password"> Введенный пароль. </param>
+        /// <returns>True - успешное выполнение. False - неуспешное выполнение. </returns>
         public bool ParseMenu(string name, string password)
         {
-            //Считывает пользователя, чтобы потом настроить меню под него, если не считал меню не парсится
+            //Считывает пользователя, чтобы потом настроить меню под него. Если не считал, меню не парсится.
             if (!ParseUser(name, password))
                 return false;
 
@@ -99,7 +121,13 @@ namespace MetadataProg.Data
             return true;
         }
 
-        //Склеивает строчки 1 - для меню, 2 - для пользователя
+        /// <summary>
+        /// Склеивание строчек.
+        /// </summary>
+        /// <param name="fileLine"> Массив строк. </param>
+        /// <param name="choice"> Для какой конфигурации происходит склеивание: 1 - для меню, 2 - для пользователя. </param>
+        /// <param name="position"> Какая по счёту строчка считывается. </param>
+        /// <returns> True - успешное выполнение. False - неуспешное выполнение. </returns>
         private bool ConcatStrings(ref string[] fileLine, int choice, int position = 0) 
         {
             int index = -1;
@@ -145,7 +173,7 @@ namespace MetadataProg.Data
                             fileLine[2] = UserConfig[i][1];
                     }
 
-                    if (fileLine.Length < 3 && fileLine.Length > 4)
+                    if (fileLine.Length < 3 || fileLine.Length > 4)
                         return false;
                     return true;
                 case 2:
@@ -169,6 +197,7 @@ namespace MetadataProg.Data
                     LengthOfSecond = fileLine.Length - index;
                     temp = new string[1 + LengthOfSecond];
 
+                    // Копирование массива строк во временный массив для последующей пересборки массива строк.
                     Array.ConstrainedCopy(fileLine, 0, temp, 0, 1);
                     Array.ConstrainedCopy(fileLine, index, temp, 1, LengthOfSecond);
 

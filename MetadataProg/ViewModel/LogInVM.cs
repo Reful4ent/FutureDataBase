@@ -3,8 +3,12 @@ using MetadataProg.ViewModel.Commands;
 
 namespace MetadataProg.ViewModel
 {
+    /// <summary>
+    /// Реализация MVVM (к нему привязано окно LogIn).
+    /// </summary>
     public class LogInVM : BasicVM
     {
+
         IFileParser fileParser;
 
         string login = string.Empty;
@@ -18,12 +22,18 @@ namespace MetadataProg.ViewModel
             this.fileParser = fileParser;
         }
 
+        /// <summary>
+        /// Логин пользователя.
+        /// </summary>
         public string Login
         {
             get => login;
             set => Set(ref login, value);
         }
 
+        /// <summary>
+        /// Пароль пользователя.
+        /// </summary>
         public string Password
         {
             get => password;
@@ -31,12 +41,12 @@ namespace MetadataProg.ViewModel
         }
 
         /// <summary>
-        /// Создание команды для привязки View к обработке нажатия
+        /// Создание команды для привязки View к обработке нажатия.
         /// </summary>
         public Command GoToMain => Command.Create(LogIn);
 
         /// <summary>
-        /// Если регистрация прошла успешно, пользователь входит в главное окно, иначе - выскакиевает окно об ошибке
+        /// Если регистрация прошла успешно, то пользователь входит в главное окно, иначе - выскакивает окно об ошибке.
         /// </summary>
         private void LogIn()
         {

@@ -5,7 +5,7 @@ using System.Windows;
 namespace MetadataProg
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Логика взаимодейсвия для App.xaml
     /// </summary>
     public partial class App : Application
     {

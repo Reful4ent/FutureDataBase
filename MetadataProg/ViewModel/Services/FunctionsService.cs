@@ -3,7 +3,7 @@
 namespace MetadataProg.ViewModel.Services
 {
     /// <summary>
-    /// Класс с методами навигационного меню главного окна
+    /// Класс с методами навигационного меню главного окна.
     /// </summary>
     public class FunctionsService
     {
